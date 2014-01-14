@@ -5,3 +5,5 @@ BUGS
 * Sometimes text that is off-screen will not be rendered when it scrolls into view. It seems that this happens most often with the prompt that appears after a command finishes executing
 * Setting TERM=dumb in the environment replaces the whole environment instead of just adding that variable.
 * Formatting changes don't take effect until the selection changes. But after the first time, formatting changes take effect immediately.
+* Control codes aren't interpreted
+* Keyboard shortcuts like Ctrl+D and Ctrl+C don't work.

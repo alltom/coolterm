@@ -53,6 +53,7 @@
 		E2ACEF9218839E6300DCE433 /* CoolTermTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolTermTests.m; sourceTree = "<group>"; };
 		E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTTerminal.h; sourceTree = "<group>"; };
 		E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTTerminal.m; sourceTree = "<group>"; };
+		E2ACEF9F1885E9B700DCE433 /* BUGS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BUGS.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		E2ACEF5C18839E6300DCE433 = {
 			isa = PBXGroup;
 			children = (
+				E2ACEF9F1885E9B700DCE433 /* BUGS.md */,
 				E2ACEF6E18839E6300DCE433 /* CoolTerm */,
 				E2ACEF8C18839E6300DCE433 /* CoolTermTests */,
 				E2ACEF6718839E6300DCE433 /* Frameworks */,
@@ -471,6 +473,7 @@
 				E2ACEF9818839E6300DCE433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2ACEF9918839E6300DCE433 /* Build configuration list for PBXNativeTarget "CoolTermTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +482,7 @@
 				E2ACEF9B18839E6300DCE433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
