@@ -102,6 +102,9 @@
 
 - (void)start
 {
+    self.automaticDashSubstitutionEnabled = NO;
+    self.automaticQuoteSubstitutionEnabled = NO;
+    
     scrollView = (NSScrollView *)self.superview.superview;
     scrollView.contentView.postsBoundsChangedNotifications = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self
