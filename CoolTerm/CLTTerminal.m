@@ -113,7 +113,7 @@
                                                object:scrollView.contentView];
     
     task = [NSTask new];
-    task.launchPath = @"/bin/bash";
+    task.launchPath = @"/bin/sh";
     task.arguments = @[@"-i", @"-l", @"-s"];
     task.environment = @{ @"TERM" : @"dumb" };
     
