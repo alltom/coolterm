@@ -40,6 +40,22 @@
     [self start];
 }
 
+- (void)start
+{
+    self.automaticDashSubstitutionEnabled = NO;
+    self.automaticQuoteSubstitutionEnabled = NO;
+    
+    [self startShell];
+}
+
+- (IBAction)sendCommand:(id)sender
+{
+    [self writeCommand:[self.textStorage.string substringWithRange:self.selectedRange]];
+}
+
+
+#pragma mark - Text View Events
+
 - (BOOL)shouldChangeTextInRange:(NSRange)affectedCharRange replacementString:(NSString *)replacementString
 {
     BOOL should = [super shouldChangeTextInRange:affectedCharRange replacementString:replacementString];
@@ -66,31 +82,17 @@
     }
 }
 
+- (void)scrolled:(id)sender
+{
+    [self enableReadsIfNecessary];
+}
+
+
+#pragma mark - Text View Helpers
+
 - (NSString *)pendingInput
 {
     return [[self.textStorage string] substringFromIndex:nonInputLength];
-}
-
-- (void)receivedData:(NSData *)data
-{
-    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSAttributedString *as = [[NSAttributedString alloc] initWithString:string attributes:nil];
-    
-    [data enumerateByteRangesUsingBlock:^(const void *bytes, NSRange byteRange, BOOL *stop) {
-        for (int i = 0; i < byteRange.length; i++) {
-            const unsigned char *chars = (const unsigned char *)bytes;
-            if (chars[i] < 32 && chars[i] != 10 && chars[i] != 13 && chars[i] != 9) {
-                NSLog(@"control character: %d", chars[i]);
-            }
-        }
-    }];
-    
-    [self.textStorage insertAttributedString:as atIndex:nonInputLength];
-    nonInputLength += as.length;
-    
-    if (!self.isEndOfTextVisible) {
-        [self enableReads:NO];
-    }
 }
 
 - (BOOL)isEndOfTextVisible
@@ -100,11 +102,11 @@
     return self.textStorage.string.length == glyphRange.location + glyphRange.length;
 }
 
-- (void)start
+
+#pragma mark - I/O Helpers
+
+- (void)startShell
 {
-    self.automaticDashSubstitutionEnabled = NO;
-    self.automaticQuoteSubstitutionEnabled = NO;
-    
     scrollView = (NSScrollView *)self.superview.superview;
     scrollView.contentView.postsBoundsChangedNotifications = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -138,9 +140,26 @@
     [task launch];
 }
 
-- (void)enableReadsIfNecessary
+- (void)receivedData:(NSData *)data
 {
-    [self enableReads:self.isEndOfTextVisible];
+    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSAttributedString *as = [[NSAttributedString alloc] initWithString:string attributes:nil];
+    
+    [data enumerateByteRangesUsingBlock:^(const void *bytes, NSRange byteRange, BOOL *stop) {
+        for (int i = 0; i < byteRange.length; i++) {
+            const unsigned char *chars = (const unsigned char *)bytes;
+            if (chars[i] < 32 && chars[i] != 10 && chars[i] != 13 && chars[i] != 9) {
+                NSLog(@"control character: %d", chars[i]);
+            }
+        }
+    }];
+    
+    [self.textStorage insertAttributedString:as atIndex:nonInputLength];
+    nonInputLength += as.length;
+    
+    if (!self.isEndOfTextVisible) {
+        [self enableReads:NO];
+    }
 }
 
 - (void)enableReads:(BOOL)enable
@@ -156,14 +175,9 @@
     }
 }
 
-- (void)scrolled:(id)sender
+- (void)enableReadsIfNecessary
 {
-    [self enableReadsIfNecessary];
-}
-
-- (IBAction)sendCommand:(id)sender
-{
-    [self writeCommand:[self.textStorage.string substringWithRange:self.selectedRange]];
+    [self enableReads:self.isEndOfTextVisible];
 }
 
 - (void)writeCommand:(NSString *)command
