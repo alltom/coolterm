@@ -18,6 +18,7 @@
 		E2ACEF8918839E6300DCE433 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2ACEF6818839E6300DCE433 /* Cocoa.framework */; };
 		E2ACEF9118839E6300DCE433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2ACEF8F18839E6300DCE433 /* InfoPlist.strings */; };
 		E2ACEF9318839E6300DCE433 /* CoolTermTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ACEF9218839E6300DCE433 /* CoolTermTests.m */; };
+		E2ACEF9E1883A0E800DCE433 /* CLTTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		E2ACEF8E18839E6300DCE433 /* CoolTermTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoolTermTests-Info.plist"; sourceTree = "<group>"; };
 		E2ACEF9018839E6300DCE433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2ACEF9218839E6300DCE433 /* CoolTermTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolTermTests.m; sourceTree = "<group>"; };
+		E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTTerminal.h; sourceTree = "<group>"; };
+		E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTTerminal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				E2ACEF7D18839E6300DCE433 /* MainMenu.xib */,
 				E2ACEF8018839E6300DCE433 /* Images.xcassets */,
 				E2ACEF6F18839E6300DCE433 /* Supporting Files */,
+				E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */,
+				E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */,
 			);
 			path = CoolTerm;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2ACEF9E1883A0E800DCE433 /* CLTTerminal.m in Sources */,
 				E2ACEF7C18839E6300DCE433 /* CLTAppDelegate.m in Sources */,
 				E2ACEF7518839E6300DCE433 /* main.m in Sources */,
 			);
