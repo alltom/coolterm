@@ -1,7 +1,7 @@
 A small, fun project
 ====================
 
-The aim is a native terminal for OS X that inherits some of the nice features of Plan 9 terminal:
+The aim is a terminal for OS X that uses the native text editor widget and inherits some of the nice features of Plan 9 terminal:
 
 * History is editable
 * Output does not scroll automatically
