@@ -73,7 +73,6 @@
 
 - (void)receivedData:(NSData *)data
 {
-    NSLog(@"read");
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSAttributedString *as = [[NSAttributedString alloc] initWithString:string attributes:nil];
     
