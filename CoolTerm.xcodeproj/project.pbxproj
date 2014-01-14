@@ -54,6 +54,7 @@
 		E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTTerminal.h; sourceTree = "<group>"; };
 		E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTTerminal.m; sourceTree = "<group>"; };
 		E2ACEF9F1885E9B700DCE433 /* BUGS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BUGS.md; sourceTree = SOURCE_ROOT; };
+		E2ACEFA11885EA9200DCE433 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 		E2ACEF5C18839E6300DCE433 = {
 			isa = PBXGroup;
 			children = (
+				E2ACEFA11885EA9200DCE433 /* README.md */,
 				E2ACEF9F1885E9B700DCE433 /* BUGS.md */,
 				E2ACEF6E18839E6300DCE433 /* CoolTerm */,
 				E2ACEF8C18839E6300DCE433 /* CoolTermTests */,
@@ -122,11 +124,11 @@
 			children = (
 				E2ACEF7A18839E6300DCE433 /* CLTAppDelegate.h */,
 				E2ACEF7B18839E6300DCE433 /* CLTAppDelegate.m */,
+				E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */,
+				E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */,
 				E2ACEF7D18839E6300DCE433 /* MainMenu.xib */,
 				E2ACEF8018839E6300DCE433 /* Images.xcassets */,
 				E2ACEF6F18839E6300DCE433 /* Supporting Files */,
-				E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */,
-				E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */,
 			);
 			path = CoolTerm;
 			sourceTree = "<group>";
