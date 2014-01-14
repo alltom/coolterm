@@ -112,10 +112,13 @@
                                                  name:NSViewBoundsDidChangeNotification
                                                object:scrollView.contentView];
     
+    NSMutableDictionary *environment = [NSProcessInfo processInfo].environment.mutableCopy;
+    environment[@"TERM"] = @"dumb";
+    
     task = [NSTask new];
-    task.launchPath = @"/bin/sh";
-    task.arguments = @[@"-i", @"-l", @"-s"];
-    task.environment = @{ @"TERM" : @"dumb" };
+    task.launchPath = @"/bin/bash";
+    task.arguments = @[@"-i", @"-l"];
+    task.environment = environment;
     
     task.standardInput = inputPipe = [NSPipe pipe];
     task.standardOutput = outputPipe = [NSPipe pipe];
