@@ -28,7 +28,8 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController
 {
     if (history) {
-        [self.terminal addHistory:history];
+        // XXX: for some reason, doing this synchronously leaves the cursor in the wrong position
+        [self.terminal performSelector:@selector(addHistory:) withObject:history afterDelay:0.3];
         history = nil;
     }
     
