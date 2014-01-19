@@ -7,8 +7,12 @@
 //
 
 #import "CLTDocument.h"
+#import "CLTTerminal.h"
 
 @implementation CLTDocument
+{
+    NSAttributedString *history;
+}
 
 - (NSString *)windowNibName
 {
@@ -20,22 +24,51 @@
     return YES;
 }
 
+- (void)windowControllerDidLoadNib:(NSWindowController *)windowController
+{
+    if (history) {
+        [self.terminal addHistory:history];
+        history = nil;
+    }
+}
+
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
-    // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-    // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-    NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-    @throw exception;
-    return nil;
+    [self.terminal breakUndoCoalescing];
+    NSAttributedString *text = self.terminal.attributedString;
+    NSData *textData = [text dataFromRange:NSMakeRange(0, text.length)
+                        documentAttributes:@{NSDocumentTypeDocumentAttribute : NSRTFDTextDocumentType}
+                                     error:outError];
+    
+    if (textData == nil) {
+        return nil;
+    }
+    
+    NSDictionary *currentState = @{@"Text" : textData};
+    
+    return [NSKeyedArchiver archivedDataWithRootObject:currentState];
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-    // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-    // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-    @throw exception;
+    NSDictionary *currentState = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (![currentState isKindOfClass:[NSDictionary class]]) {
+        return NO;
+    }
+    
+    NSData *textData = currentState[@"Text"];
+    if (![textData isKindOfClass:[NSData class]]) {
+        return NO;
+    }
+    
+    history = [[NSAttributedString alloc] initWithData:textData
+                                               options:nil
+                                    documentAttributes:nil
+                                                 error:outError];
+    if (history == nil) {
+        return NO;
+    }
+    
     return YES;
 }
 

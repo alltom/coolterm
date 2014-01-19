@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CLTTerminal;
+
 @interface CLTDocument : NSDocument
+
+@property (unsafe_unretained) IBOutlet CLTTerminal *terminal;
 
 @end

@@ -13,4 +13,6 @@
 - (IBAction)sendCommand:(id)sender;
 - (void)writeCommand:(NSString *)command;
 
+- (void)addHistory:(NSAttributedString *)history;
+
 @end

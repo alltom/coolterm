@@ -60,6 +60,16 @@
     [self writeCommand:[self.textStorage.string substringWithRange:self.selectedRange]];
 }
 
+- (void)addHistory:(NSAttributedString *)history
+{
+    NSMutableAttributedString *as = [NSMutableAttributedString new];
+    [as appendAttributedString:history];
+    [as appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n--- end restored state ---\n"]];
+    
+    [self.textStorage insertAttributedString:as atIndex:0];
+    nonInputLength += as.length;
+}
+
 
 #pragma mark - Text View Events
 

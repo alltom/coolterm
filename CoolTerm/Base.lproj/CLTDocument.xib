@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CLTDocument">
             <connections>
+                <outlet property="terminal" destination="rV2-4o-O2x" id="gb5-M4-jfR"/>
                 <outlet property="window" destination="5" id="18"/>
             </connections>
         </customObject>
