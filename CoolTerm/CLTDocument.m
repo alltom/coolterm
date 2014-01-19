@@ -11,6 +11,7 @@
 
 @implementation CLTDocument
 {
+    NSString *path;
     NSAttributedString *history;
 }
 
@@ -30,6 +31,13 @@
         [self.terminal addHistory:history];
         history = nil;
     }
+    
+    if (path) {
+        self.terminal.currentDirectoryPath = path;
+        path = nil;
+    }
+    
+    [self.terminal startShell];
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
@@ -44,7 +52,8 @@
         return nil;
     }
     
-    NSDictionary *currentState = @{@"Text" : textData};
+    NSDictionary *currentState = @{@"Text" : textData,
+                                   @"Path" : self.terminal.currentDirectoryPath};
     
     return [NSKeyedArchiver archivedDataWithRootObject:currentState];
 }
@@ -53,6 +62,11 @@
 {
     NSDictionary *currentState = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     if (![currentState isKindOfClass:[NSDictionary class]]) {
+        return NO;
+    }
+    
+    path = currentState[@"Path"];
+    if (![path isKindOfClass:[NSString class]]) {
         return NO;
     }
     

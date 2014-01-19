@@ -52,12 +52,22 @@
                                                  name:NSViewBoundsDidChangeNotification
                                                object:scrollView.contentView];
     
-    [self startShell];
+    task = [NSTask new];
 }
 
 - (IBAction)sendCommand:(id)sender
 {
     [self writeCommand:[self.textStorage.string substringWithRange:self.selectedRange]];
+}
+
+- (NSString *)currentDirectoryPath
+{
+    return task.currentDirectoryPath;
+}
+
+- (void)setCurrentDirectoryPath:(NSString *)path
+{
+    task.currentDirectoryPath = path;
 }
 
 - (void)addHistory:(NSAttributedString *)history
@@ -136,7 +146,6 @@
     NSMutableDictionary *environment = [NSProcessInfo processInfo].environment.mutableCopy;
     environment[@"TERM"] = @"dumb";
     
-    task = [NSTask new];
     task.launchPath = @"/bin/bash";
     task.arguments = @[@"-i", @"-l"];
     task.environment = environment;

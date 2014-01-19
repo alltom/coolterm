@@ -13,6 +13,10 @@
 - (IBAction)sendCommand:(id)sender;
 - (void)writeCommand:(NSString *)command;
 
+- (NSString *)currentDirectoryPath;
+- (void)setCurrentDirectoryPath:(NSString *)path;
 - (void)addHistory:(NSAttributedString *)history;
+
+- (void)startShell;
 
 @end
