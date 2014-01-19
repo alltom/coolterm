@@ -127,7 +127,7 @@
     environment[@"TERM"] = @"dumb";
     
     task = [NSTask new];
-    task.launchPath = @"/usr/local/plan9/bin/rc";
+    task.launchPath = @"/bin/bash";
     task.arguments = @[@"-i", @"-l"];
     task.environment = environment;
     

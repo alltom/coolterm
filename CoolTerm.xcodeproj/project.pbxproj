@@ -7,158 +7,157 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E2ACEF6918839E6300DCE433 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2ACEF6818839E6300DCE433 /* Cocoa.framework */; };
-		E2ACEF7318839E6300DCE433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2ACEF7118839E6300DCE433 /* InfoPlist.strings */; };
-		E2ACEF7518839E6300DCE433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ACEF7418839E6300DCE433 /* main.m */; };
-		E2ACEF7918839E6300DCE433 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E2ACEF7718839E6300DCE433 /* Credits.rtf */; };
-		E2ACEF7C18839E6300DCE433 /* CLTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ACEF7B18839E6300DCE433 /* CLTAppDelegate.m */; };
-		E2ACEF7F18839E6300DCE433 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2ACEF7D18839E6300DCE433 /* MainMenu.xib */; };
-		E2ACEF8118839E6300DCE433 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ACEF8018839E6300DCE433 /* Images.xcassets */; };
-		E2ACEF8818839E6300DCE433 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2ACEF8718839E6300DCE433 /* XCTest.framework */; };
-		E2ACEF8918839E6300DCE433 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2ACEF6818839E6300DCE433 /* Cocoa.framework */; };
-		E2ACEF9118839E6300DCE433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2ACEF8F18839E6300DCE433 /* InfoPlist.strings */; };
-		E2ACEF9318839E6300DCE433 /* CoolTermTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ACEF9218839E6300DCE433 /* CoolTermTests.m */; };
-		E2ACEF9E1883A0E800DCE433 /* CLTTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */; };
+		E2D49583188B926F005A2139 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D49582188B926F005A2139 /* Cocoa.framework */; };
+		E2D4958D188B926F005A2139 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D4958B188B926F005A2139 /* InfoPlist.strings */; };
+		E2D4958F188B926F005A2139 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D4958E188B926F005A2139 /* main.m */; };
+		E2D49593188B926F005A2139 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E2D49591188B926F005A2139 /* Credits.rtf */; };
+		E2D49596188B926F005A2139 /* CLTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D49595188B926F005A2139 /* CLTDocument.m */; };
+		E2D49599188B926F005A2139 /* CLTDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D49597188B926F005A2139 /* CLTDocument.xib */; };
+		E2D4959C188B926F005A2139 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D4959A188B926F005A2139 /* MainMenu.xib */; };
+		E2D4959E188B926F005A2139 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D4959D188B926F005A2139 /* Images.xcassets */; };
+		E2D495A5188B926F005A2139 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D495A4188B926F005A2139 /* XCTest.framework */; };
+		E2D495A6188B926F005A2139 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D49582188B926F005A2139 /* Cocoa.framework */; };
+		E2D495AE188B926F005A2139 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D495AC188B926F005A2139 /* InfoPlist.strings */; };
+		E2D495B0188B926F005A2139 /* CoolTermTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D495AF188B926F005A2139 /* CoolTermTests.m */; };
+		E2D495C0188B94A2005A2139 /* CLTTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D495BF188B94A2005A2139 /* CLTTerminal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E2ACEF8A18839E6300DCE433 /* PBXContainerItemProxy */ = {
+		E2D495A7188B926F005A2139 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E2ACEF5D18839E6300DCE433 /* Project object */;
+			containerPortal = E2D49577188B926F005A2139 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E2ACEF6418839E6300DCE433;
+			remoteGlobalIDString = E2D4957E188B926F005A2139;
 			remoteInfo = CoolTerm;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E2ACEF6518839E6300DCE433 /* CoolTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2ACEF6818839E6300DCE433 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		E2ACEF6B18839E6300DCE433 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		E2ACEF6C18839E6300DCE433 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E2ACEF6D18839E6300DCE433 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E2ACEF7018839E6300DCE433 /* CoolTerm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoolTerm-Info.plist"; sourceTree = "<group>"; };
-		E2ACEF7218839E6300DCE433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E2ACEF7418839E6300DCE433 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E2ACEF7618839E6300DCE433 /* CoolTerm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolTerm-Prefix.pch"; sourceTree = "<group>"; };
-		E2ACEF7818839E6300DCE433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		E2ACEF7A18839E6300DCE433 /* CLTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTAppDelegate.h; sourceTree = "<group>"; };
-		E2ACEF7B18839E6300DCE433 /* CLTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTAppDelegate.m; sourceTree = "<group>"; };
-		E2ACEF7E18839E6300DCE433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E2ACEF8018839E6300DCE433 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E2ACEF8618839E6300DCE433 /* CoolTermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolTermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2ACEF8718839E6300DCE433 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E2ACEF8E18839E6300DCE433 /* CoolTermTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoolTermTests-Info.plist"; sourceTree = "<group>"; };
-		E2ACEF9018839E6300DCE433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E2ACEF9218839E6300DCE433 /* CoolTermTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolTermTests.m; sourceTree = "<group>"; };
-		E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTTerminal.h; sourceTree = "<group>"; };
-		E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTTerminal.m; sourceTree = "<group>"; };
-		E2ACEF9F1885E9B700DCE433 /* BUGS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BUGS.md; sourceTree = SOURCE_ROOT; };
-		E2ACEFA11885EA9200DCE433 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E2D4957F188B926F005A2139 /* CoolTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D49582188B926F005A2139 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E2D49585188B926F005A2139 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E2D49586188B926F005A2139 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E2D49587188B926F005A2139 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E2D4958A188B926F005A2139 /* CoolTerm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoolTerm-Info.plist"; sourceTree = "<group>"; };
+		E2D4958C188B926F005A2139 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E2D4958E188B926F005A2139 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E2D49590188B926F005A2139 /* CoolTerm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolTerm-Prefix.pch"; sourceTree = "<group>"; };
+		E2D49592188B926F005A2139 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E2D49594188B926F005A2139 /* CLTDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTDocument.h; sourceTree = "<group>"; };
+		E2D49595188B926F005A2139 /* CLTDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTDocument.m; sourceTree = "<group>"; };
+		E2D49598188B926F005A2139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CLTDocument.xib; sourceTree = "<group>"; };
+		E2D4959B188B926F005A2139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E2D4959D188B926F005A2139 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E2D495A3188B926F005A2139 /* CoolTermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolTermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D495A4188B926F005A2139 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E2D495AB188B926F005A2139 /* CoolTermTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoolTermTests-Info.plist"; sourceTree = "<group>"; };
+		E2D495AD188B926F005A2139 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E2D495AF188B926F005A2139 /* CoolTermTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolTermTests.m; sourceTree = "<group>"; };
+		E2D495BE188B94A2005A2139 /* CLTTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTTerminal.h; sourceTree = "<group>"; };
+		E2D495BF188B94A2005A2139 /* CLTTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTTerminal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E2ACEF6218839E6300DCE433 /* Frameworks */ = {
+		E2D4957C188B926F005A2139 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2ACEF6918839E6300DCE433 /* Cocoa.framework in Frameworks */,
+				E2D49583188B926F005A2139 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2ACEF8318839E6300DCE433 /* Frameworks */ = {
+		E2D495A0188B926F005A2139 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2ACEF8918839E6300DCE433 /* Cocoa.framework in Frameworks */,
-				E2ACEF8818839E6300DCE433 /* XCTest.framework in Frameworks */,
+				E2D495A6188B926F005A2139 /* Cocoa.framework in Frameworks */,
+				E2D495A5188B926F005A2139 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E2ACEF5C18839E6300DCE433 = {
+		E2D49576188B926F005A2139 = {
 			isa = PBXGroup;
 			children = (
-				E2ACEFA11885EA9200DCE433 /* README.md */,
-				E2ACEF9F1885E9B700DCE433 /* BUGS.md */,
-				E2ACEF6E18839E6300DCE433 /* CoolTerm */,
-				E2ACEF8C18839E6300DCE433 /* CoolTermTests */,
-				E2ACEF6718839E6300DCE433 /* Frameworks */,
-				E2ACEF6618839E6300DCE433 /* Products */,
+				E2D49588188B926F005A2139 /* CoolTerm */,
+				E2D495A9188B926F005A2139 /* CoolTermTests */,
+				E2D49581188B926F005A2139 /* Frameworks */,
+				E2D49580188B926F005A2139 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E2ACEF6618839E6300DCE433 /* Products */ = {
+		E2D49580188B926F005A2139 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2ACEF6518839E6300DCE433 /* CoolTerm.app */,
-				E2ACEF8618839E6300DCE433 /* CoolTermTests.xctest */,
+				E2D4957F188B926F005A2139 /* CoolTerm.app */,
+				E2D495A3188B926F005A2139 /* CoolTermTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E2ACEF6718839E6300DCE433 /* Frameworks */ = {
+		E2D49581188B926F005A2139 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2ACEF6818839E6300DCE433 /* Cocoa.framework */,
-				E2ACEF8718839E6300DCE433 /* XCTest.framework */,
-				E2ACEF6A18839E6300DCE433 /* Other Frameworks */,
+				E2D49582188B926F005A2139 /* Cocoa.framework */,
+				E2D495A4188B926F005A2139 /* XCTest.framework */,
+				E2D49584188B926F005A2139 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E2ACEF6A18839E6300DCE433 /* Other Frameworks */ = {
+		E2D49584188B926F005A2139 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2ACEF6B18839E6300DCE433 /* AppKit.framework */,
-				E2ACEF6C18839E6300DCE433 /* CoreData.framework */,
-				E2ACEF6D18839E6300DCE433 /* Foundation.framework */,
+				E2D49585188B926F005A2139 /* AppKit.framework */,
+				E2D49586188B926F005A2139 /* CoreData.framework */,
+				E2D49587188B926F005A2139 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		E2ACEF6E18839E6300DCE433 /* CoolTerm */ = {
+		E2D49588188B926F005A2139 /* CoolTerm */ = {
 			isa = PBXGroup;
 			children = (
-				E2ACEF7A18839E6300DCE433 /* CLTAppDelegate.h */,
-				E2ACEF7B18839E6300DCE433 /* CLTAppDelegate.m */,
-				E2ACEF9C1883A0E800DCE433 /* CLTTerminal.h */,
-				E2ACEF9D1883A0E800DCE433 /* CLTTerminal.m */,
-				E2ACEF7D18839E6300DCE433 /* MainMenu.xib */,
-				E2ACEF8018839E6300DCE433 /* Images.xcassets */,
-				E2ACEF6F18839E6300DCE433 /* Supporting Files */,
+				E2D495BE188B94A2005A2139 /* CLTTerminal.h */,
+				E2D495BF188B94A2005A2139 /* CLTTerminal.m */,
+				E2D49594188B926F005A2139 /* CLTDocument.h */,
+				E2D49595188B926F005A2139 /* CLTDocument.m */,
+				E2D49597188B926F005A2139 /* CLTDocument.xib */,
+				E2D4959A188B926F005A2139 /* MainMenu.xib */,
+				E2D4959D188B926F005A2139 /* Images.xcassets */,
+				E2D49589188B926F005A2139 /* Supporting Files */,
 			);
 			path = CoolTerm;
 			sourceTree = "<group>";
 		};
-		E2ACEF6F18839E6300DCE433 /* Supporting Files */ = {
+		E2D49589188B926F005A2139 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E2ACEF7018839E6300DCE433 /* CoolTerm-Info.plist */,
-				E2ACEF7118839E6300DCE433 /* InfoPlist.strings */,
-				E2ACEF7418839E6300DCE433 /* main.m */,
-				E2ACEF7618839E6300DCE433 /* CoolTerm-Prefix.pch */,
-				E2ACEF7718839E6300DCE433 /* Credits.rtf */,
+				E2D4958A188B926F005A2139 /* CoolTerm-Info.plist */,
+				E2D4958B188B926F005A2139 /* InfoPlist.strings */,
+				E2D4958E188B926F005A2139 /* main.m */,
+				E2D49590188B926F005A2139 /* CoolTerm-Prefix.pch */,
+				E2D49591188B926F005A2139 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E2ACEF8C18839E6300DCE433 /* CoolTermTests */ = {
+		E2D495A9188B926F005A2139 /* CoolTermTests */ = {
 			isa = PBXGroup;
 			children = (
-				E2ACEF9218839E6300DCE433 /* CoolTermTests.m */,
-				E2ACEF8D18839E6300DCE433 /* Supporting Files */,
+				E2D495AF188B926F005A2139 /* CoolTermTests.m */,
+				E2D495AA188B926F005A2139 /* Supporting Files */,
 			);
 			path = CoolTermTests;
 			sourceTree = "<group>";
 		};
-		E2ACEF8D18839E6300DCE433 /* Supporting Files */ = {
+		E2D495AA188B926F005A2139 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E2ACEF8E18839E6300DCE433 /* CoolTermTests-Info.plist */,
-				E2ACEF8F18839E6300DCE433 /* InfoPlist.strings */,
+				E2D495AB188B926F005A2139 /* CoolTermTests-Info.plist */,
+				E2D495AC188B926F005A2139 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -166,13 +165,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E2ACEF6418839E6300DCE433 /* CoolTerm */ = {
+		E2D4957E188B926F005A2139 /* CoolTerm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2ACEF9618839E6300DCE433 /* Build configuration list for PBXNativeTarget "CoolTerm" */;
+			buildConfigurationList = E2D495B3188B926F005A2139 /* Build configuration list for PBXNativeTarget "CoolTerm" */;
 			buildPhases = (
-				E2ACEF6118839E6300DCE433 /* Sources */,
-				E2ACEF6218839E6300DCE433 /* Frameworks */,
-				E2ACEF6318839E6300DCE433 /* Resources */,
+				E2D4957B188B926F005A2139 /* Sources */,
+				E2D4957C188B926F005A2139 /* Frameworks */,
+				E2D4957D188B926F005A2139 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -180,43 +179,43 @@
 			);
 			name = CoolTerm;
 			productName = CoolTerm;
-			productReference = E2ACEF6518839E6300DCE433 /* CoolTerm.app */;
+			productReference = E2D4957F188B926F005A2139 /* CoolTerm.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E2ACEF8518839E6300DCE433 /* CoolTermTests */ = {
+		E2D495A2188B926F005A2139 /* CoolTermTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2ACEF9918839E6300DCE433 /* Build configuration list for PBXNativeTarget "CoolTermTests" */;
+			buildConfigurationList = E2D495B6188B926F005A2139 /* Build configuration list for PBXNativeTarget "CoolTermTests" */;
 			buildPhases = (
-				E2ACEF8218839E6300DCE433 /* Sources */,
-				E2ACEF8318839E6300DCE433 /* Frameworks */,
-				E2ACEF8418839E6300DCE433 /* Resources */,
+				E2D4959F188B926F005A2139 /* Sources */,
+				E2D495A0188B926F005A2139 /* Frameworks */,
+				E2D495A1188B926F005A2139 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E2ACEF8B18839E6300DCE433 /* PBXTargetDependency */,
+				E2D495A8188B926F005A2139 /* PBXTargetDependency */,
 			);
 			name = CoolTermTests;
 			productName = CoolTermTests;
-			productReference = E2ACEF8618839E6300DCE433 /* CoolTermTests.xctest */;
+			productReference = E2D495A3188B926F005A2139 /* CoolTermTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E2ACEF5D18839E6300DCE433 /* Project object */ = {
+		E2D49577188B926F005A2139 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CLT;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Tom Lieber";
 				TargetAttributes = {
-					E2ACEF8518839E6300DCE433 = {
-						TestTargetID = E2ACEF6418839E6300DCE433;
+					E2D495A2188B926F005A2139 = {
+						TestTargetID = E2D4957E188B926F005A2139;
 					};
 				};
 			};
-			buildConfigurationList = E2ACEF6018839E6300DCE433 /* Build configuration list for PBXProject "CoolTerm" */;
+			buildConfigurationList = E2D4957A188B926F005A2139 /* Build configuration list for PBXProject "CoolTerm" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -224,97 +223,106 @@
 				en,
 				Base,
 			);
-			mainGroup = E2ACEF5C18839E6300DCE433;
-			productRefGroup = E2ACEF6618839E6300DCE433 /* Products */;
+			mainGroup = E2D49576188B926F005A2139;
+			productRefGroup = E2D49580188B926F005A2139 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E2ACEF6418839E6300DCE433 /* CoolTerm */,
-				E2ACEF8518839E6300DCE433 /* CoolTermTests */,
+				E2D4957E188B926F005A2139 /* CoolTerm */,
+				E2D495A2188B926F005A2139 /* CoolTermTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E2ACEF6318839E6300DCE433 /* Resources */ = {
+		E2D4957D188B926F005A2139 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2ACEF7318839E6300DCE433 /* InfoPlist.strings in Resources */,
-				E2ACEF8118839E6300DCE433 /* Images.xcassets in Resources */,
-				E2ACEF7918839E6300DCE433 /* Credits.rtf in Resources */,
-				E2ACEF7F18839E6300DCE433 /* MainMenu.xib in Resources */,
+				E2D4958D188B926F005A2139 /* InfoPlist.strings in Resources */,
+				E2D4959E188B926F005A2139 /* Images.xcassets in Resources */,
+				E2D49599188B926F005A2139 /* CLTDocument.xib in Resources */,
+				E2D49593188B926F005A2139 /* Credits.rtf in Resources */,
+				E2D4959C188B926F005A2139 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2ACEF8418839E6300DCE433 /* Resources */ = {
+		E2D495A1188B926F005A2139 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2ACEF9118839E6300DCE433 /* InfoPlist.strings in Resources */,
+				E2D495AE188B926F005A2139 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E2ACEF6118839E6300DCE433 /* Sources */ = {
+		E2D4957B188B926F005A2139 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2ACEF9E1883A0E800DCE433 /* CLTTerminal.m in Sources */,
-				E2ACEF7C18839E6300DCE433 /* CLTAppDelegate.m in Sources */,
-				E2ACEF7518839E6300DCE433 /* main.m in Sources */,
+				E2D495C0188B94A2005A2139 /* CLTTerminal.m in Sources */,
+				E2D49596188B926F005A2139 /* CLTDocument.m in Sources */,
+				E2D4958F188B926F005A2139 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2ACEF8218839E6300DCE433 /* Sources */ = {
+		E2D4959F188B926F005A2139 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2ACEF9318839E6300DCE433 /* CoolTermTests.m in Sources */,
+				E2D495B0188B926F005A2139 /* CoolTermTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E2ACEF8B18839E6300DCE433 /* PBXTargetDependency */ = {
+		E2D495A8188B926F005A2139 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E2ACEF6418839E6300DCE433 /* CoolTerm */;
-			targetProxy = E2ACEF8A18839E6300DCE433 /* PBXContainerItemProxy */;
+			target = E2D4957E188B926F005A2139 /* CoolTerm */;
+			targetProxy = E2D495A7188B926F005A2139 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E2ACEF7118839E6300DCE433 /* InfoPlist.strings */ = {
+		E2D4958B188B926F005A2139 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E2ACEF7218839E6300DCE433 /* en */,
+				E2D4958C188B926F005A2139 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		E2ACEF7718839E6300DCE433 /* Credits.rtf */ = {
+		E2D49591188B926F005A2139 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E2ACEF7818839E6300DCE433 /* en */,
+				E2D49592188B926F005A2139 /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		E2ACEF7D18839E6300DCE433 /* MainMenu.xib */ = {
+		E2D49597188B926F005A2139 /* CLTDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E2ACEF7E18839E6300DCE433 /* Base */,
+				E2D49598188B926F005A2139 /* Base */,
+			);
+			name = CLTDocument.xib;
+			sourceTree = "<group>";
+		};
+		E2D4959A188B926F005A2139 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D4959B188B926F005A2139 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		E2ACEF8F18839E6300DCE433 /* InfoPlist.strings */ = {
+		E2D495AC188B926F005A2139 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E2ACEF9018839E6300DCE433 /* en */,
+				E2D495AD188B926F005A2139 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -322,7 +330,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E2ACEF9418839E6300DCE433 /* Debug */ = {
+		E2D495B1188B926F005A2139 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -359,7 +367,7 @@
 			};
 			name = Debug;
 		};
-		E2ACEF9518839E6300DCE433 /* Release */ = {
+		E2D495B2188B926F005A2139 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -390,7 +398,7 @@
 			};
 			name = Release;
 		};
-		E2ACEF9718839E6300DCE433 /* Debug */ = {
+		E2D495B4188B926F005A2139 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -403,7 +411,7 @@
 			};
 			name = Debug;
 		};
-		E2ACEF9818839E6300DCE433 /* Release */ = {
+		E2D495B5188B926F005A2139 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -416,7 +424,7 @@
 			};
 			name = Release;
 		};
-		E2ACEF9A18839E6300DCE433 /* Debug */ = {
+		E2D495B7188B926F005A2139 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoolTerm.app/Contents/MacOS/CoolTerm";
@@ -438,7 +446,7 @@
 			};
 			name = Debug;
 		};
-		E2ACEF9B18839E6300DCE433 /* Release */ = {
+		E2D495B8188B926F005A2139 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoolTerm.app/Contents/MacOS/CoolTerm";
@@ -459,34 +467,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E2ACEF6018839E6300DCE433 /* Build configuration list for PBXProject "CoolTerm" */ = {
+		E2D4957A188B926F005A2139 /* Build configuration list for PBXProject "CoolTerm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E2ACEF9418839E6300DCE433 /* Debug */,
-				E2ACEF9518839E6300DCE433 /* Release */,
+				E2D495B1188B926F005A2139 /* Debug */,
+				E2D495B2188B926F005A2139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2ACEF9618839E6300DCE433 /* Build configuration list for PBXNativeTarget "CoolTerm" */ = {
+		E2D495B3188B926F005A2139 /* Build configuration list for PBXNativeTarget "CoolTerm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E2ACEF9718839E6300DCE433 /* Debug */,
-				E2ACEF9818839E6300DCE433 /* Release */,
+				E2D495B4188B926F005A2139 /* Debug */,
+				E2D495B5188B926F005A2139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		E2ACEF9918839E6300DCE433 /* Build configuration list for PBXNativeTarget "CoolTermTests" */ = {
+		E2D495B6188B926F005A2139 /* Build configuration list for PBXNativeTarget "CoolTermTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E2ACEF9A18839E6300DCE433 /* Debug */,
-				E2ACEF9B18839E6300DCE433 /* Release */,
+				E2D495B7188B926F005A2139 /* Debug */,
+				E2D495B8188B926F005A2139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E2ACEF5D18839E6300DCE433 /* Project object */;
+	rootObject = E2D49577188B926F005A2139 /* Project object */;
 }
