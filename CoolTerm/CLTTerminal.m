@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tom Lieber. All rights reserved.
 //
 
+#include <util.h>
 #import "CLTTerminal.h"
 
 @implementation CLTTerminal
@@ -13,8 +14,7 @@
     NSScrollView *scrollView;
     
     NSTask *task;
-    NSPipe *inputPipe;
-    NSPipe *outputPipe;
+    NSFileHandle *masterHandle;
     NSPipe *errorOutputPipe;
     NSUInteger nonInputLength;
     
@@ -44,6 +44,13 @@
 {
     self.automaticDashSubstitutionEnabled = NO;
     self.automaticQuoteSubstitutionEnabled = NO;
+    
+    scrollView = (NSScrollView *)self.superview.superview;
+    scrollView.contentView.postsBoundsChangedNotifications = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(scrolled:)
+                                                 name:NSViewBoundsDidChangeNotification
+                                               object:scrollView.contentView];
     
     [self startShell];
 }
@@ -107,23 +114,25 @@
 
 - (void)startShell
 {
-    scrollView = (NSScrollView *)self.superview.superview;
-    scrollView.contentView.postsBoundsChangedNotifications = YES;
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(scrolled:)
-                                                 name:NSViewBoundsDidChangeNotification
-                                               object:scrollView.contentView];
+    int amaster = 0, aslave = 0;
+    if (openpty(&amaster, &aslave, NULL, NULL, NULL) == -1) {
+        NSLog(@"openpty failed");
+        return;
+    }
+    
+    masterHandle = [[NSFileHandle alloc] initWithFileDescriptor:amaster closeOnDealloc:YES];
+    NSFileHandle *slaveHandle = [[NSFileHandle alloc] initWithFileDescriptor:aslave closeOnDealloc:YES];
     
     NSMutableDictionary *environment = [NSProcessInfo processInfo].environment.mutableCopy;
     environment[@"TERM"] = @"dumb";
     
     task = [NSTask new];
-    task.launchPath = @"/bin/bash";
+    task.launchPath = @"/usr/local/plan9/bin/rc";
     task.arguments = @[@"-i", @"-l"];
     task.environment = environment;
     
-    task.standardInput = inputPipe = [NSPipe pipe];
-    task.standardOutput = outputPipe = [NSPipe pipe];
+    task.standardInput = slaveHandle;
+    task.standardOutput = slaveHandle;
     task.standardError = errorOutputPipe = [NSPipe pipe];
     
     __block typeof(self) weakSelf = self;
@@ -148,7 +157,7 @@
     [data enumerateByteRangesUsingBlock:^(const void *bytes, NSRange byteRange, BOOL *stop) {
         for (int i = 0; i < byteRange.length; i++) {
             const unsigned char *chars = (const unsigned char *)bytes;
-            if (chars[i] < 32 && chars[i] != 10 && chars[i] != 13 && chars[i] != 9) {
+            if (iscntrl(chars[i]) && chars[i] != 9 && chars[i] != 10 && chars[i] != 13) {
                 NSLog(@"control character: %d", chars[i]);
             }
         }
@@ -165,11 +174,11 @@
 - (void)enableReads:(BOOL)enable
 {
     if (enable && !readsEnabled) {
-        outputPipe.fileHandleForReading.readabilityHandler = readHandler;
+        masterHandle.readabilityHandler = readHandler;
         errorOutputPipe.fileHandleForReading.readabilityHandler = readHandler;
         readsEnabled = YES;
     } else if (!enable && readsEnabled) {
-        outputPipe.fileHandleForReading.readabilityHandler = nil;
+        masterHandle.readabilityHandler = nil;
         errorOutputPipe.fileHandleForReading.readabilityHandler = nil;
         readsEnabled = NO;
     }
@@ -185,7 +194,7 @@
     if (![command hasSuffix:@"\n"]) {
         command = [command stringByAppendingString:@"\n"];
     }
-    [inputPipe.fileHandleForWriting writeData:[command dataUsingEncoding:NSUTF8StringEncoding]];
+    [masterHandle writeData:[command dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 @end
