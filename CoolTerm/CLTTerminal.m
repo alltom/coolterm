@@ -177,6 +177,7 @@
 - (void)receivedData:(NSData *)data
 {
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    string = [string stringByReplacingOccurrencesOfString:@"\r" withString:@""];
     NSAttributedString *as = [[NSAttributedString alloc] initWithString:string attributes:nil];
     
     [data enumerateByteRangesUsingBlock:^(const void *bytes, NSRange byteRange, BOOL *stop) {
