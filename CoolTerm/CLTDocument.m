@@ -87,4 +87,26 @@
     return YES;
 }
 
+// don't show a save dialog when a window is closed
+// override this to just tell the delegate to close instead of showing a dialog and saving first
+- (void)canCloseDocumentWithDelegate:(id)delegate shouldCloseSelector:(SEL)shouldCloseSelector contextInfo:(void *)contextInfo
+{
+    NSMethodSignature *ms;
+    NSInvocation *inv;
+    BOOL shouldClose = YES;
+    
+    if ([delegate respondsToSelector:shouldCloseSelector]) {
+        ms = [delegate methodSignatureForSelector:shouldCloseSelector];
+        inv = [NSInvocation invocationWithMethodSignature:ms];
+        
+        [inv setTarget:delegate];
+        [inv setSelector:shouldCloseSelector];
+        [inv setArgument:&delegate atIndex:2];
+        [inv setArgument:&shouldClose atIndex:3];
+        [inv setArgument:&contextInfo atIndex:4];
+        
+        [inv invoke];
+    }
+}
+
 @end
