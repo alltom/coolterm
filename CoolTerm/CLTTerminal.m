@@ -53,6 +53,12 @@
                                                object:scrollView.contentView];
     
     task = [NSTask new];
+    
+    NSDictionary *environment = [NSProcessInfo processInfo].environment;
+    NSString *homePath = environment[@"HOME"];
+    if (homePath) {
+        task.currentDirectoryPath = homePath;
+    }
 }
 
 - (IBAction)sendCommand:(id)sender
