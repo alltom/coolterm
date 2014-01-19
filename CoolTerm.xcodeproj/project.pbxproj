@@ -20,6 +20,9 @@
 		E2D495AE188B926F005A2139 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D495AC188B926F005A2139 /* InfoPlist.strings */; };
 		E2D495B0188B926F005A2139 /* CoolTermTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D495AF188B926F005A2139 /* CoolTermTests.m */; };
 		E2D495C0188B94A2005A2139 /* CLTTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D495BF188B94A2005A2139 /* CLTTerminal.m */; };
+		E2D495C4188BB0E0005A2139 /* BUGS.md in Resources */ = {isa = PBXBuildFile; fileRef = E2D495C1188BB0E0005A2139 /* BUGS.md */; };
+		E2D495C5188BB0E0005A2139 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E2D495C2188BB0E0005A2139 /* LICENSE */; };
+		E2D495C6188BB0E0005A2139 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E2D495C3188BB0E0005A2139 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		E2D495AF188B926F005A2139 /* CoolTermTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolTermTests.m; sourceTree = "<group>"; };
 		E2D495BE188B94A2005A2139 /* CLTTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTTerminal.h; sourceTree = "<group>"; };
 		E2D495BF188B94A2005A2139 /* CLTTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTTerminal.m; sourceTree = "<group>"; };
+		E2D495C1188BB0E0005A2139 /* BUGS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BUGS.md; sourceTree = "<group>"; };
+		E2D495C2188BB0E0005A2139 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E2D495C3188BB0E0005A2139 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 		E2D49576188B926F005A2139 = {
 			isa = PBXGroup;
 			children = (
+				E2D495C1188BB0E0005A2139 /* BUGS.md */,
+				E2D495C2188BB0E0005A2139 /* LICENSE */,
+				E2D495C3188BB0E0005A2139 /* README.md */,
 				E2D49588188B926F005A2139 /* CoolTerm */,
 				E2D495A9188B926F005A2139 /* CoolTermTests */,
 				E2D49581188B926F005A2139 /* Frameworks */,
@@ -242,7 +251,10 @@
 				E2D4958D188B926F005A2139 /* InfoPlist.strings in Resources */,
 				E2D4959E188B926F005A2139 /* Images.xcassets in Resources */,
 				E2D49599188B926F005A2139 /* CLTDocument.xib in Resources */,
+				E2D495C5188BB0E0005A2139 /* LICENSE in Resources */,
+				E2D495C4188BB0E0005A2139 /* BUGS.md in Resources */,
 				E2D49593188B926F005A2139 /* Credits.rtf in Resources */,
+				E2D495C6188BB0E0005A2139 /* README.md in Resources */,
 				E2D4959C188B926F005A2139 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +495,7 @@
 				E2D495B5188B926F005A2139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2D495B6188B926F005A2139 /* Build configuration list for PBXNativeTarget "CoolTermTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +504,7 @@
 				E2D495B8188B926F005A2139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
