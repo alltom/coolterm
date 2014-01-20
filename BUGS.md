@@ -8,3 +8,5 @@ BUGS
 * Formatting changes don't take effect until the selection changes. But after the first time, formatting changes take effect immediately.
 * Control codes aren't interpreted. (http://www.pixelbeat.org/scripts/ansi2html.sh)
 * Undo misbehaves.
+* Cannot configure default font.
+* No way to enable auto-scroll.
