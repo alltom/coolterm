@@ -1,5 +1,5 @@
-A small, fun project
-====================
+A small terminal made for fun
+=============================
 
 ![screencast](https://raw.github.com/alltom/coolterm/master/screencast.gif)
 
