@@ -12,3 +12,4 @@ BUGS
 * No way to enable auto-scroll.
 * No way to export history as, say, RTFD or HTML.
 * Icon isn't in the OS X style.
+* Processes aren't killed when the window closes.
