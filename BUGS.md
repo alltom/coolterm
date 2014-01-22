@@ -8,8 +8,11 @@ BUGS
 * Formatting changes don't take effect until the selection changes. But after the first time, formatting changes take effect immediately.
 * Control codes aren't interpreted. (http://www.pixelbeat.org/scripts/ansi2html.sh)
 * Undo stack should be cleared whenever new stuff prints.
-* Cannot configure default font.
 * No way to enable auto-scroll.
 * No way to export history as, say, RTFD or HTML.
-* Icon isn't in the OS X style.
 * Processes aren't killed when the window closes.
+* If you close all windows, no window is opened on next launch.
+* Missing settings
+  * Spell-checking should be optional.
+  * Cannot configure default font.
+* Icon isn't in the OS X style.
