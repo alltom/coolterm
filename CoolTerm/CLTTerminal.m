@@ -40,6 +40,18 @@
     [self start];
 }
 
+- (void)setFrame:(NSRect)frameRect
+{
+    frameRect.size.height += scrollView.frame.size.height - 20;
+    [super setFrame:frameRect];
+}
+
+- (void)setFrameSize:(NSSize)newSize
+{
+    newSize.height += scrollView.frame.size.height - 20;
+    [super setFrameSize:newSize];
+}
+
 - (void)cleanUp
 {
     [task terminate];
