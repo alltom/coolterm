@@ -54,11 +54,14 @@
 
 - (void)cleanUp
 {
+    [masterHandle closeFile];
     [task terminate];
 }
 
 - (void)start
 {
+    self.delegate = self;
+    
     self.automaticDashSubstitutionEnabled = NO;
     self.automaticQuoteSubstitutionEnabled = NO;
     
@@ -105,6 +108,26 @@
 
 
 #pragma mark - Text View Events
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    NSUInteger flags = theEvent.modifierFlags;
+    unsigned short keyCode = theEvent.keyCode;
+    
+    if ((flags & NSControlKeyMask) && keyCode == 8) {
+        NSLog(@"ctrl-c");
+        [task interrupt];
+    } else if ((flags & NSControlKeyMask) && keyCode == 2) {
+        NSLog(@"ctrl-d");
+        [masterHandle writeData:[@"" dataUsingEncoding:NSUTF8StringEncoding]];
+    } else if ((flags & NSDeviceIndependentModifierFlagsMask) == 0 && keyCode == 126) {
+        NSLog(@"up");
+    } else if ((flags & NSDeviceIndependentModifierFlagsMask) == 0 && keyCode == 125) {
+        NSLog(@"down");
+    } else {
+        [super keyDown:theEvent];
+    }
+}
 
 - (BOOL)shouldChangeTextInRange:(NSRange)affectedCharRange replacementString:(NSString *)replacementString
 {

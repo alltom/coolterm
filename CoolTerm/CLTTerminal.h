@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CLTTerminal : NSTextView
+@interface CLTTerminal : NSTextView<NSTextViewDelegate>
 
 - (void)cleanUp;
 - (IBAction)sendCommand:(id)sender;
