@@ -2,7 +2,7 @@ BUGS
 ====
 
 * Keyboard shortcuts like Ctrl+D and Ctrl+C don't work.
-* You can't scroll the last line to the top of the window.
+* You can't scroll the last line to the top of the window. (http://stackoverflow.com/a/8029147/129889, http://stackoverflow.com/q/2533932/129889)
 * Arrow keys move the cursor instead of scrolling the view. (Maybe not a bug??)
 * Sometimes text that is off-screen will not be rendered when it scrolls into view. It seems that this happens most often with the prompt that appears after a command finishes executing.
 * Formatting changes don't take effect until the selection changes. But after the first time, formatting changes take effect immediately.
@@ -16,3 +16,4 @@ BUGS
   * Spell-checking should be optional.
   * Cannot configure default font.
 * Icon isn't in the OS X style.
+* Dock icon doesn't show the number of windows with new content. (Seems like a fun feature, right?)
