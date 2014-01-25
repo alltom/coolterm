@@ -40,6 +40,11 @@
     [self start];
 }
 
+- (void)cleanUp
+{
+    [task terminate];
+}
+
 - (void)start
 {
     self.automaticDashSubstitutionEnabled = NO;

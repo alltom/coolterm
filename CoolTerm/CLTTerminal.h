@@ -10,6 +10,7 @@
 
 @interface CLTTerminal : NSTextView
 
+- (void)cleanUp;
 - (IBAction)sendCommand:(id)sender;
 - (void)writeCommand:(NSString *)command;
 

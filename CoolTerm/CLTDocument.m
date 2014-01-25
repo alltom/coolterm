@@ -25,6 +25,11 @@
     return YES;
 }
 
+- (void)dealloc
+{
+    [self.terminal cleanUp];
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController
 {
     if (history) {
