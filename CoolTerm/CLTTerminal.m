@@ -115,11 +115,9 @@
     unsigned short keyCode = theEvent.keyCode;
     
     if ((flags & NSControlKeyMask) && keyCode == 8) {
-        NSLog(@"ctrl-c");
-        [task interrupt];
+        [masterHandle writeData:[NSData dataWithBytes:"\003" length:1]];
     } else if ((flags & NSControlKeyMask) && keyCode == 2) {
-        NSLog(@"ctrl-d");
-        [masterHandle writeData:[@"" dataUsingEncoding:NSUTF8StringEncoding]];
+        [masterHandle writeData:[NSData dataWithBytes:"\004" length:1]];
     } else if ((flags & NSDeviceIndependentModifierFlagsMask) == 0 && keyCode == 126) {
         NSLog(@"up");
     } else if ((flags & NSDeviceIndependentModifierFlagsMask) == 0 && keyCode == 125) {

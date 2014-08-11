@@ -1,7 +1,6 @@
 BUGS
 ====
 
-* Keyboard shortcuts like Ctrl+D and Ctrl+C don't work.
 * Processes aren't killed when the window closes.
 * No auto-complete.
 * If you close all windows, no window is opened on next launch.
