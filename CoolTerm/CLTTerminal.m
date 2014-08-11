@@ -201,11 +201,21 @@
     task.standardError = errorOutputPipe = [NSPipe pipe];
     
     __block typeof(self) weakSelf = self;
+    
     readHandler = ^(NSFileHandle *handle) {
         NSData *data = handle.availableData;
         dispatch_async(dispatch_get_main_queue(), ^{
             typeof(self) strongSelf = weakSelf;
             [strongSelf receivedData:data];
+        });
+    };
+    
+    task.terminationHandler = ^(NSTask *task){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            typeof(self) strongSelf = weakSelf;
+            if (strongSelf.terminationHandler != nil) {
+                strongSelf.terminationHandler(strongSelf);
+            }
         });
     };
     

@@ -43,6 +43,9 @@
         path = nil;
     }
     
+    self.terminal.terminationHandler = ^(CLTTerminal *terminal){
+        [self close];
+    };
     [self.terminal startShell];
 }
 

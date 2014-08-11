@@ -20,4 +20,6 @@
 
 - (void)startShell;
 
+@property (nonatomic, copy) void (^terminationHandler)(CLTTerminal *terminal);
+
 @end
