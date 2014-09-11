@@ -109,6 +109,16 @@
     nonInputLength += as.length;
 }
 
+- (IBAction)toggleAutoScroll:(id)sender
+{
+    _autoScroll = !_autoScroll;
+    
+    if ([sender isKindOfClass:[NSMenuItem class]]) {
+        NSMenuItem *menuItem = (NSMenuItem *)sender;
+        menuItem.state = _autoScroll ? NSOnState : NSOffState;
+    }
+}
+
 
 #pragma mark - Text View Events
 
@@ -246,7 +256,9 @@
     [self.textStorage insertAttributedString:as atIndex:nonInputLength];
     nonInputLength += as.length;
     
-    if (!self.isEndOfTextVisible) {
+    if (_autoScroll) {
+        [self scrollRangeToVisible: NSMakeRange(self.string.length, 0)];
+    } else if (!self.isEndOfTextVisible) {
         [self enableReads:NO];
     }
 }

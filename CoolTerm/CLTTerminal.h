@@ -20,6 +20,9 @@
 
 - (void)startShell;
 
+- (IBAction)toggleAutoScroll:(id)sender;
+
 @property (nonatomic, copy) void (^terminationHandler)(CLTTerminal *terminal);
+@property (nonatomic, assign) BOOL autoScroll;
 
 @end
