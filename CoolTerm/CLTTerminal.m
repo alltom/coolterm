@@ -174,6 +174,9 @@
     NSRange glyphRange = [self.layoutManager glyphRangeForBoundingRect:scrollView.documentVisibleRect
                                                        inTextContainer:self.textContainer];
     return self.textStorage.string.length == glyphRange.location + glyphRange.length;
+    
+    // alternate method http://stackoverflow.com/a/15547841/129889
+//    return (NSMaxY(self.textView.visibleRect) == NSMaxY(self.textView.bounds));
 }
 
 
