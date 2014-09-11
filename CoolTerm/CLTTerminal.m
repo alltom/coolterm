@@ -9,6 +9,9 @@
 #include <util.h>
 #import "CLTTerminal.h"
 
+@interface CLTTerminal () <NSTextViewDelegate>
+@end
+
 @implementation CLTTerminal
 {
     NSScrollView *scrollView;
