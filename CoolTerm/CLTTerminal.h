@@ -26,3 +26,6 @@
 @property (nonatomic, assign) BOOL autoScroll;
 
 @end
+
+@interface CLTTerminalScrollView : NSScrollView
+@end

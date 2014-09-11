@@ -12,9 +12,17 @@
 @interface CLTTerminal () <NSTextViewDelegate>
 @end
 
+@interface CLTTerminalScrollView ()
+
+@property (nonatomic, assign) BOOL drawBorder;
+@property (nonatomic, assign) CGFloat borderWidth;
+@property (nonatomic) NSColor *borderColor;
+
+@end
+
 @implementation CLTTerminal
 {
-    NSScrollView *scrollView;
+    CLTTerminalScrollView *scrollView;
     
     NSTask *task;
     NSFileHandle *masterHandle;
@@ -45,13 +53,13 @@
 
 - (void)setFrame:(NSRect)frameRect
 {
-    frameRect.size.height += scrollView.frame.size.height - 20;
+    frameRect.size.height += scrollView.frame.size.height - scrollView.borderWidth * 2 - self.lastLineHeight;
     [super setFrame:frameRect];
 }
 
 - (void)setFrameSize:(NSSize)newSize
 {
-    newSize.height += scrollView.frame.size.height - 20;
+    newSize.height += scrollView.frame.size.height - scrollView.borderWidth * 2 - self.lastLineHeight;
     [super setFrameSize:newSize];
 }
 
@@ -68,7 +76,7 @@
     self.automaticDashSubstitutionEnabled = NO;
     self.automaticQuoteSubstitutionEnabled = NO;
     
-    scrollView = (NSScrollView *)self.superview.superview;
+    scrollView = (CLTTerminalScrollView *)self.superview.superview;
     scrollView.contentView.postsBoundsChangedNotifications = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(scrolled:)
@@ -112,6 +120,11 @@
 - (IBAction)toggleAutoScroll:(id)sender
 {
     _autoScroll = !_autoScroll;
+    scrollView.drawBorder = _autoScroll;
+    
+    if (_autoScroll) {
+        [self scrollToBottom];
+    }
     
     if ([sender isKindOfClass:[NSMenuItem class]]) {
         NSMenuItem *menuItem = (NSMenuItem *)sender;
@@ -189,6 +202,16 @@
 //    return (NSMaxY(self.textView.visibleRect) == NSMaxY(self.textView.bounds));
 }
 
+- (void)scrollToBottom
+{
+    [self scrollRangeToVisible:NSMakeRange(self.string.length, 0)];
+}
+
+- (CGFloat)lastLineHeight
+{
+    return 20; // TODO
+}
+
 
 #pragma mark - I/O Helpers
 
@@ -257,7 +280,7 @@
     nonInputLength += as.length;
     
     if (_autoScroll) {
-        [self scrollRangeToVisible: NSMakeRange(self.string.length, 0)];
+        [self scrollToBottom];
     } else if (!self.isEndOfTextVisible) {
         [self enableReads:NO];
     }
@@ -287,6 +310,43 @@
         command = [command stringByAppendingString:@"\n"];
     }
     [masterHandle writeData:[command dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
+@end
+
+@implementation CLTTerminalScrollView
+
+- (void)awakeFromNib {
+    _borderWidth = 10;
+    _borderColor = [NSColor colorWithCalibratedRed:0.049 green:0.396 blue:0.58 alpha:1];
+}
+
+- (void)setDrawBorder:(BOOL)drawBorder
+{
+    if (_drawBorder != drawBorder) {
+        _drawBorder = drawBorder;
+        [self setNeedsLayout:YES];
+    }
+}
+
+- (void)tile
+{
+    id contentView = [self contentView];
+    [super tile];
+    if (_drawBorder) {
+        [contentView setFrame:NSInsetRect([contentView frame], _borderWidth, _borderWidth)];
+    }
+}
+
+- (void)drawRect:(NSRect)dirtyRect
+{
+    if (_drawBorder) {
+        [_borderColor set];
+        
+        NSBezierPath *path = [NSBezierPath bezierPathWithRect:self.bounds];
+        [path setLineWidth:_borderWidth * 2 + 2];
+        [path stroke];
+    }
 }
 
 @end
