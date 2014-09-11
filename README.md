@@ -11,3 +11,5 @@ The aim is a terminal for OS X that uses the native text editor widget and provi
 It's not done. See BUGS.md
 
 (CoolTerm is a code name!)
+
+Tip: scroll with Ctrl+up/down
