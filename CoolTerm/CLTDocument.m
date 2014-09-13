@@ -13,6 +13,7 @@
 {
     NSString *path;
     NSAttributedString *history;
+    NSNumber *autoScroll;
 }
 
 - (NSString *)windowNibName
@@ -43,6 +44,10 @@
         path = nil;
     }
     
+    if (autoScroll) {
+        self.terminal.autoScroll = autoScroll.boolValue;
+    }
+    
     self.terminal.terminationHandler = ^(CLTTerminal *terminal){
         [self close];
     };
@@ -62,7 +67,8 @@
     }
     
     NSDictionary *currentState = @{@"Text" : textData,
-                                   @"Path" : self.terminal.currentDirectoryPath};
+                                   @"Path" : self.terminal.currentDirectoryPath,
+                                   @"Auto-Scroll" : @(self.terminal.autoScroll)};
     
     return [NSKeyedArchiver archivedDataWithRootObject:currentState];
 }
@@ -74,13 +80,18 @@
         return NO;
     }
     
-    path = currentState[@"Path"];
-    if (![path isKindOfClass:[NSString class]]) {
+    NSString *pathValue = currentState[@"Path"];
+    if (![pathValue isKindOfClass:[NSString class]]) {
         return NO;
     }
     
     NSData *textData = currentState[@"Text"];
     if (![textData isKindOfClass:[NSData class]]) {
+        return NO;
+    }
+    
+    NSNumber *autoScrollValue = currentState[@"Auto-Scroll"];
+    if (![autoScrollValue isKindOfClass:[NSNumber class]]) {
         return NO;
     }
     
@@ -91,6 +102,9 @@
     if (history == nil) {
         return NO;
     }
+    
+    path = pathValue;
+    autoScroll = autoScrollValue;
     
     return YES;
 }

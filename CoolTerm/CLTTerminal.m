@@ -117,14 +117,24 @@
     nonInputLength += as.length;
 }
 
+- (void)setAutoScroll:(BOOL)autoScroll
+{
+    if (_autoScroll != autoScroll) {
+        _autoScroll = autoScroll;
+        scrollView.drawBorder = _autoScroll;
+        
+        if (_autoScroll) {
+            [self scrollToBottom];
+        }
+    }
+}
+
+
+#pragma mark - Menu Events
+
 - (IBAction)toggleAutoScroll:(id)sender
 {
-    _autoScroll = !_autoScroll;
-    scrollView.drawBorder = _autoScroll;
-    
-    if (_autoScroll) {
-        [self scrollToBottom];
-    }
+    self.autoScroll = !self.autoScroll;
     
     if ([sender isKindOfClass:[NSMenuItem class]]) {
         NSMenuItem *menuItem = (NSMenuItem *)sender;
