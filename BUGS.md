@@ -3,7 +3,6 @@ BUGS
 
 * Processes aren't killed when the window closes.
 * No auto-complete.
-* Old content sticks around forever
 * If you close all windows, no window is opened on next launch.
 * Sometimes text that is off-screen will not be rendered when it scrolls into view. It seems that this happens most often with the prompt that appears after a command finishes executing.
 * Cannot configure default font.

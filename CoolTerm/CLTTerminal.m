@@ -9,6 +9,8 @@
 #include <util.h>
 #import "CLTTerminal.h"
 
+static const NSUInteger kDefaultScrollbackCharacters = 100000;
+
 @interface CLTTerminal () <NSTextViewDelegate>
 @end
 
@@ -38,6 +40,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
+        self.scrollbackCharacters = kDefaultScrollbackCharacters;
         [self start];
     }
     
@@ -48,6 +51,7 @@
 {
     [super awakeFromNib];
     
+    self.scrollbackCharacters = kDefaultScrollbackCharacters;
     [self start];
 }
 
@@ -114,7 +118,17 @@
     [as appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n--- end restored state ---\n"]];
     
     [self.textStorage insertAttributedString:as atIndex:0];
+    [self addedData];
     nonInputLength += as.length;
+}
+
+- (void)addedData
+{
+    if (_scrollbackCharacters > 0 && nonInputLength > _scrollbackCharacters) {
+        NSInteger toDelete = nonInputLength - _scrollbackCharacters;
+        [self.textStorage replaceCharactersInRange:NSMakeRange(0, toDelete) withString:@""];
+        nonInputLength = _scrollbackCharacters;
+    }
 }
 
 - (void)setAutoScroll:(BOOL)autoScroll
@@ -288,6 +302,7 @@
     
     [self.textStorage insertAttributedString:as atIndex:nonInputLength];
     nonInputLength += as.length;
+    [self addedData];
     
     if (_autoScroll) {
         [self scrollToBottom];
