@@ -27,7 +27,7 @@ static const NSUInteger kDefaultScrollbackCharacters = 100000;
     CLTTerminalScrollView *scrollView;
     
     NSTask *task;
-    NSFileHandle *masterHandle;
+    NSFileHandle *masterHandle, *slaveHandle;
     NSPipe *errorOutputPipe;
     NSUInteger nonInputLength;
     
@@ -70,6 +70,9 @@ static const NSUInteger kDefaultScrollbackCharacters = 100000;
 - (void)cleanUp
 {
     [masterHandle closeFile];
+    [slaveHandle closeFile];
+    [errorOutputPipe.fileHandleForReading closeFile];
+    [errorOutputPipe.fileHandleForWriting closeFile];
     [task terminate];
 }
 
@@ -248,7 +251,7 @@ static const NSUInteger kDefaultScrollbackCharacters = 100000;
     }
     
     masterHandle = [[NSFileHandle alloc] initWithFileDescriptor:amaster closeOnDealloc:YES];
-    NSFileHandle *slaveHandle = [[NSFileHandle alloc] initWithFileDescriptor:aslave closeOnDealloc:YES];
+    slaveHandle = [[NSFileHandle alloc] initWithFileDescriptor:aslave closeOnDealloc:YES];
     
     NSMutableDictionary *environment = [NSProcessInfo processInfo].environment.mutableCopy;
     environment[@"TERM"] = @"dumb";
@@ -266,14 +269,15 @@ static const NSUInteger kDefaultScrollbackCharacters = 100000;
     readHandler = ^(NSFileHandle *handle) {
         NSData *data = handle.availableData;
         dispatch_async(dispatch_get_main_queue(), ^{
-            typeof(self) strongSelf = weakSelf;
-            [strongSelf receivedData:data];
+            [weakSelf receivedData:data];
         });
     };
     
     task.terminationHandler = ^(NSTask *task){
         dispatch_async(dispatch_get_main_queue(), ^{
             typeof(self) strongSelf = weakSelf;
+            [strongSelf cleanUp];
+            
             if (strongSelf.terminationHandler != nil) {
                 strongSelf.terminationHandler(strongSelf);
             }
