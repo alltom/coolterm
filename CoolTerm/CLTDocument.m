@@ -8,12 +8,14 @@
 
 #import "CLTDocument.h"
 #import "CLTTerminal.h"
+#import "CLTAppDelegate.h"
 
 @implementation CLTDocument
 {
     NSString *path;
     NSAttributedString *history;
     NSNumber *autoScroll;
+    NSFont *font;
 }
 
 - (NSString *)windowNibName
@@ -48,6 +50,15 @@
         self.terminal.autoScroll = autoScroll.boolValue;
     }
     
+    if (font) {
+        self.terminal.defaultFont = font;
+    } else {
+        CLTAppDelegate *appDelegate = [NSApplication sharedApplication].delegate;
+        font = self.terminal.defaultFont = appDelegate.currentDefaultFont;
+    }
+    
+    // start 'er up
+    
     self.terminal.terminationHandler = ^(CLTTerminal *terminal){
         [self close];
     };
@@ -66,9 +77,12 @@
         return nil;
     }
     
-    NSDictionary *currentState = @{@"Text" : textData,
-                                   @"Path" : self.terminal.currentDirectoryPath,
-                                   @"Auto-Scroll" : @(self.terminal.autoScroll)};
+    NSMutableDictionary *currentState = @{@"Text" : textData,
+                                          @"Path" : self.terminal.currentDirectoryPath,
+                                          @"Auto-Scroll" : @(self.terminal.autoScroll)}.mutableCopy;
+    if (font != nil) {
+        currentState[@"Font"] = font;
+    }
     
     return [NSKeyedArchiver archivedDataWithRootObject:currentState];
 }
@@ -95,6 +109,11 @@
         return NO;
     }
     
+    NSFont *fontValue = currentState[@"Font"];
+    if (fontValue != nil && ![fontValue isKindOfClass:[NSFont class]]) {
+        NSLog(@"ignoring unknown font: %@", fontValue);
+    }
+    
     history = [[NSAttributedString alloc] initWithData:textData
                                                options:nil
                                     documentAttributes:nil
@@ -105,6 +124,7 @@
     
     path = pathValue;
     autoScroll = autoScrollValue;
+    font = fontValue;
     
     return YES;
 }

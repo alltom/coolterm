@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E23C450A19D2370400BB5C65 /* CLTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C450919D2370400BB5C65 /* CLTAppDelegate.m */; };
 		E2D49583188B926F005A2139 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D49582188B926F005A2139 /* Cocoa.framework */; };
 		E2D4958D188B926F005A2139 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D4958B188B926F005A2139 /* InfoPlist.strings */; };
 		E2D4958F188B926F005A2139 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D4958E188B926F005A2139 /* main.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E23C450819D2370400BB5C65 /* CLTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTAppDelegate.h; sourceTree = "<group>"; };
+		E23C450919D2370400BB5C65 /* CLTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTAppDelegate.m; sourceTree = "<group>"; };
 		E2D4957F188B926F005A2139 /* CoolTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D49582188B926F005A2139 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E2D49585188B926F005A2139 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,8 @@
 		E2D49588188B926F005A2139 /* CoolTerm */ = {
 			isa = PBXGroup;
 			children = (
+				E23C450819D2370400BB5C65 /* CLTAppDelegate.h */,
+				E23C450919D2370400BB5C65 /* CLTAppDelegate.m */,
 				E2D495BE188B94A2005A2139 /* CLTTerminal.h */,
 				E2D495BF188B94A2005A2139 /* CLTTerminal.m */,
 				E2D49594188B926F005A2139 /* CLTDocument.h */,
@@ -276,6 +281,7 @@
 			files = (
 				E2D495C0188B94A2005A2139 /* CLTTerminal.m in Sources */,
 				E2D49596188B926F005A2139 /* CLTDocument.m in Sources */,
+				E23C450A19D2370400BB5C65 /* CLTAppDelegate.m in Sources */,
 				E2D4958F188B926F005A2139 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

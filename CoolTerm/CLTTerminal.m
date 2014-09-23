@@ -146,6 +146,13 @@ static const NSUInteger kDefaultScrollbackCharacters = 100000;
     }
 }
 
+- (void)setDefaultFont:(NSFont *)defaultFont
+{
+    if (![_defaultFont isEqual:defaultFont]) {
+        _defaultFont = defaultFont;
+    }
+}
+
 
 #pragma mark - Menu Events
 
@@ -293,7 +300,12 @@ static const NSUInteger kDefaultScrollbackCharacters = 100000;
 {
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     string = [string stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    NSAttributedString *as = [[NSAttributedString alloc] initWithString:string attributes:nil];
+    
+    NSDictionary *attributes = nil;
+    if (_defaultFont != nil) {
+        attributes = @{NSFontAttributeName: _defaultFont};
+    }
+    NSAttributedString *as = [[NSAttributedString alloc] initWithString:string attributes:attributes];
     
     [data enumerateByteRangesUsingBlock:^(const void *bytes, NSRange byteRange, BOOL *stop) {
         for (int i = 0; i < byteRange.length; i++) {

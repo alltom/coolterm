@@ -26,6 +26,7 @@
 
 @property (nonatomic, assign) BOOL autoScroll;
 @property (nonatomic, assign) NSUInteger scrollbackCharacters;
+@property (nonatomic) NSFont *defaultFont; // default = nil
 
 @end
 

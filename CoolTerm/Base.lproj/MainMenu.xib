@@ -4,9 +4,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="GVP-cm-37S" id="Wko-SM-aJc"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="GVP-cm-37S" customClass="CLTAppDelegate">
+            <connections>
+                <outlet property="defaultFontPreferenceLabel" destination="fOf-Wb-TDt" id="8MJ-76-s9A"/>
+                <outlet property="preferencesWindow" destination="Dh1-pb-B1v" id="k35-OA-Qqb"/>
+            </connections>
+        </customObject>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
                 <menuItem title="CoolTerm" id="56">
@@ -21,7 +31,11 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences…" keyEquivalent="," id="129"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="showPreferences:" target="-1" id="VND-eW-2HA"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -660,5 +674,68 @@ DQ
             </items>
         </menu>
         <customObject id="419" customClass="NSFontManager"/>
+        <userDefaultsController id="5wL-rn-Xwa"/>
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Dh1-pb-B1v">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="131" y="159" width="467" height="86"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <view key="contentView" id="E72-lC-xhR">
+                <rect key="frame" x="0.0" y="0.0" width="467" height="86"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IWR-to-yJW">
+                        <rect key="frame" x="113" y="49" width="86" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Default Font:" id="PuS-V1-7gb">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fOf-Wb-TDt">
+                        <rect key="frame" x="203" y="49" width="80" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="System Font" id="Vdj-2c-vhd">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eAq-WB-Kbu">
+                        <rect key="frame" x="199" y="13" width="100" height="32"/>
+                        <buttonCell key="cell" type="push" title="Change..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4TR-md-aQc">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeDefaultFont:" target="GVP-cm-37S" id="FCO-4K-FND"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q22-pt-oaa">
+                        <rect key="frame" x="299" y="13" width="74" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yjD-iL-m4L">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetDefaultFont:" target="GVP-cm-37S" id="F9T-E0-JtS"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eAq-WB-Kbu" firstAttribute="top" secondItem="fOf-Wb-TDt" secondAttribute="bottom" constant="8" symbolic="YES" id="2Ag-4Z-zUo"/>
+                    <constraint firstItem="eAq-WB-Kbu" firstAttribute="baseline" secondItem="q22-pt-oaa" secondAttribute="baseline" id="AcA-cC-8rY"/>
+                    <constraint firstAttribute="trailing" secondItem="q22-pt-oaa" secondAttribute="trailing" constant="100" id="QPM-aO-hgV"/>
+                    <constraint firstItem="q22-pt-oaa" firstAttribute="leading" secondItem="eAq-WB-Kbu" secondAttribute="trailing" constant="12" symbolic="YES" id="RlF-8e-wIp"/>
+                    <constraint firstAttribute="bottom" secondItem="eAq-WB-Kbu" secondAttribute="bottom" constant="20" symbolic="YES" id="Ye4-gi-PLx"/>
+                    <constraint firstItem="fOf-Wb-TDt" firstAttribute="top" secondItem="E72-lC-xhR" secondAttribute="top" constant="20" symbolic="YES" id="bdu-NL-fe0"/>
+                    <constraint firstItem="IWR-to-yJW" firstAttribute="leading" secondItem="E72-lC-xhR" secondAttribute="leading" constant="115" id="dWc-Et-phC"/>
+                    <constraint firstItem="eAq-WB-Kbu" firstAttribute="leading" secondItem="fOf-Wb-TDt" secondAttribute="leading" id="iEe-35-GYa"/>
+                    <constraint firstItem="fOf-Wb-TDt" firstAttribute="leading" secondItem="IWR-to-yJW" secondAttribute="trailing" constant="8" symbolic="YES" id="kLu-7N-Pbb"/>
+                    <constraint firstItem="IWR-to-yJW" firstAttribute="baseline" secondItem="fOf-Wb-TDt" secondAttribute="baseline" id="mGQ-hu-Nht"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="244.5" y="202"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="uUJ-Il-KsC"/>
     </objects>
 </document>
