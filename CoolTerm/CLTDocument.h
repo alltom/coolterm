@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString *CLTTerminalDocumentActivityNotification;
+
 @class CLTTerminal;
 
 @interface CLTDocument : NSDocument

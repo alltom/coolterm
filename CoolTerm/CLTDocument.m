@@ -10,6 +10,8 @@
 #import "CLTTerminal.h"
 #import "CLTAppDelegate.h"
 
+NSString *CLTTerminalDocumentActivityNotification = @"CLTTerminalDocumentActivityNotification";
+
 @implementation CLTDocument
 {
     NSString *path;
@@ -61,6 +63,9 @@
     
     self.terminal.terminationHandler = ^(CLTTerminal *terminal){
         [self close];
+    };
+    self.terminal.activityHandler = ^(CLTTerminal *terminal){
+        [[NSNotificationCenter defaultCenter] postNotificationName:CLTTerminalDocumentActivityNotification object:self];
     };
     [self.terminal startShell];
 }

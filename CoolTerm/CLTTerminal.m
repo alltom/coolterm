@@ -132,6 +132,10 @@ static const NSUInteger kDefaultScrollbackCharacters = 100000;
         [self.textStorage replaceCharactersInRange:NSMakeRange(0, toDelete) withString:@""];
         nonInputLength = _scrollbackCharacters;
     }
+    
+    if (self.activityHandler != nil) {
+        self.activityHandler(self);
+    }
 }
 
 - (void)setAutoScroll:(BOOL)autoScroll
